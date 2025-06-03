@@ -42,32 +42,32 @@
                         <form id="formUtente" action="">
                             <div class="mb-3">
                                 <label for="nomeUtente" class="form-label">Nome</label>
-                                <input type="text" class="form-control" id="nomeUtente">
+                                <input required type="text" class="form-control" id="nomeUtente">
                             </div>
                             <div class="mb-3">
                                 <label for="cognomeUtente" class="form-label">Cognome</label>
-                                <input type="text" class="form-control" id="cognomeUtente">
+                                <input required type="text" class="form-control" id="cognomeUtente">
                             </div>
                             <div class="mb-3">
                                 <label for="emailUtente" class="form-label">Email</label>
-                                <input type="text" class="form-control" id="emailUtente">
+                                <input required type="text" class="form-control" id="emailUtente">
                             </div>
                             <div class="mb-3">
                                 <label for="tipoDiLavoro" class="form-label">Tipo di lavoro</label>
-                                <select class="form-select" aria-label="Default select example">
+                                <select required id="selectUtente" class="form-select" aria-label="Default select example">
                                     <option value="">Seleziona il tipo di lavoro</option>
                                 </select>
                             </div>
                             <div class="mb-3">
                                 <label class="form-label" for="">Textarea cin Bootstrap 5</label>
-                                <textarea class="form-control" id="" style="height: 100px"></textarea>
+                                <textarea class="form-control" id="textAreaInput" style="height: 100px"></textarea>
                             </div>
                             <div class="mb-3">
-                                <label for="codicePromozionale" class="form-label">Codice promozionale (opzionale)</label>
+                                <label id="promotional-codes-label" for="codicePromozionale" class="form-label">Codice promozionale (opzionale)</label>
                                 <input type="text" class="form-control" id="codicePromozionale">
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="checkDefault">
+                                <input required class="form-check-input" type="checkbox" value="" id="checkDefault">
                                 <label class="form-check-label" for="checkDefault">
                                     Accetta la Privacy Policy
                                 </label>
@@ -78,7 +78,7 @@
                                 </div>
                                 <div>
                                     <p class="text-center mb-0 fw-bold">Prezzo finale</p>
-                                    <span class="text-center fw-bold fs-1" id="intero">€ 200,</span><span id="decimale">00</span>
+                                    <span class="text-center fw-bold fs-1" id="entire">€ 0.</span><span id="decimal">00</span>
                                 </div>
                             </div>
                         </form>
