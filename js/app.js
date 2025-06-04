@@ -1,18 +1,18 @@
 // id form
-const form = document.getElementById('formUtente')
-const inputSelect = form.querySelector('#selectUtente')
-const promozionalCodesInput = form.querySelector('#codicePromozionale')
-const nomeUtente = form.querySelector('#nomeUtente')
-const cognomeUtente = form.querySelector('#cognomeUtente')
-const emailUtente = form.querySelector('#emailUtente')
-const textAreaInput = form.querySelector('#textAreaInput')
-const promotionalCodesLabel = form.querySelector('#promotional-codes-label')
+const form = document.getElementById('formUtente') // id contenente tutti gli altri id del form
+const inputSelect = form.querySelector('#selectUtente') // form.queryselector per cercare direttamente all'interno del form, senza dover partire sempre dal 'document'
+const promozionalCodesInput = form.querySelector('#codicePromozionale') // form.queryselector per cercare direttamente all'interno del form, senza dover partire sempre dal 'document'
+const nomeUtente = form.querySelector('#nomeUtente') // form.queryselector per cercare direttamente all'interno del form, senza dover partire sempre dal 'document'
+const cognomeUtente = form.querySelector('#cognomeUtente') // form.queryselector per cercare direttamente all'interno del form, senza dover partire sempre dal 'document'
+const emailUtente = form.querySelector('#emailUtente') // form.queryselector per cercare direttamente all'interno del form, senza dover partire sempre dal 'document'
+const textAreaInput = form.querySelector('#textAreaInput') // form.queryselector per cercare direttamente all'interno del form, senza dover partire sempre dal 'document'
+const promotionalCodesLabel = form.querySelector('#promotional-codes-label') // form.queryselector per cercare direttamente all'interno del form, senza dover partire sempre dal 'document'
 
 // id output
 const outputEntire = form.querySelector('#entire')
 const outputDecimal = form.querySelector('#decimal')
 
-// object di oggetti tipo lavoro
+// array di oggetti tipo lavoro
 const typeWork = [
     {
         name: 'Sviluppo-backend',
@@ -53,7 +53,7 @@ form.addEventListener('submit', function(event){
             outputDecimal.textContent = `${decimal}`
             promozionalCodesInput.classList.remove('is-invalid')
         } else {
-            alert('Codice promozionale non e valido')
+            alert('Codice promozionale non valido')
             promozionalCodesInput.classList.add('is-invalid')
             return
         }
