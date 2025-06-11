@@ -43,13 +43,13 @@ form.addEventListener('submit', function(event){
     event.preventDefault() // privato del comportamento di default
     const findWork = typeWork.find(typeWork => typeWork.name === inputSelect.value) // cerca l' oggetto con il valore selezionato nella select
     const priceResult = findWork.price * 10 // calcola il prezzo correlato all'oggetto dell'input 
+    const discount = priceResult * 25 / 100
 
     if(promozionalCodesInput.value !== ''){ // se non e vuoto esegue questo
         if(promotionalCodes.includes(promozionalCodesInput.value)){
-            const discount = priceResult * 25 / 100
             const risult = priceResult - discount
-            const [entire, decimal] = risult.toFixed(2).toString().split('.')
-            outputEntire.textContent = `${entire}${'.'}`
+            const [entire, decimal] = risult.toFixed(2).split('.')
+            outputEntire.textContent = `€ ${entire}${'.'}`
             outputDecimal.textContent = `${decimal}`
             promozionalCodesInput.classList.remove('is-invalid')
         } else {
@@ -57,10 +57,10 @@ form.addEventListener('submit', function(event){
             promozionalCodesInput.classList.add('is-invalid')
             return
         }
-    } else if(inputSelect.value !== ''){ // altrimenti se non e vuoto esegue questo
+    } else{ // altrimenti se non e vuoto esegue questo
         promozionalCodesInput.classList.remove('is-invalid')
         const [entire, decimal] = priceResult.toFixed(2).toString().split('.')
-        outputEntire.textContent = `${entire}${'.'}`
+        outputEntire.textContent = `€ ${entire}${'.'}`
         outputDecimal.textContent = `${decimal}`
     }
 
